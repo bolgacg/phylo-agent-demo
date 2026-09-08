@@ -244,7 +244,8 @@ renderTask();
   const gains = MODELS.map(m => [m, pct(...cell(m,"agent2","ALL")) - pct(...cell(m,"agent","ALL"))]).sort((a,b)=>b[1]-a[1]);
   const cladeTop = gains[0][0];
   const cladeBefore = pct(...cell(cladeTop,"agent","clade")), cladeAfter = pct(...cell(cladeTop,"agent2","clade"));
-  $("#capR-take").textContent = `error messages are part of the interface: the biggest mover is ${ML[gains[0][0]]} at ${gains[0][1]>0?"+"+gains[0][1]:gains[0][1]} points overall (clade kind: ${cladeBefore} to ${cladeAfter} percent), from changing nothing but the text of the error.`;
+  const noise = gains.filter(g => Math.abs(g[1]) <= 4).length;
+  $("#capR-take").textContent = `error messages are part of the interface: the biggest mover is ${ML[gains[0][0]]} at ${gains[0][1]>0?"+"+gains[0][1]:gains[0][1]} points overall (clade kind: ${cladeBefore} to ${cladeAfter} percent), from changing nothing but the text of the error. ${noise ? noise + " of the five move four points or fewer, which on 120 tasks is within noise." : ""}`;
 })();
 
 /* ---------- guided tour: placement from document coordinates ---------- */

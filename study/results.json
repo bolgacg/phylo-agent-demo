@@ -26,6 +26,32 @@
     25
    ]
   },
+  "gemma4b|agent2": {
+   "leaf_count": [
+    4,
+    20
+   ],
+   "ALL": [
+    58,
+    120
+   ],
+   "closer": [
+    14,
+    25
+   ],
+   "clade": [
+    17,
+    25
+   ],
+   "same_topology": [
+    23,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
   "gemma4b|probe": {
    "leaf_count": [
     0,
@@ -97,6 +123,32 @@
    ],
    "same_topology": [
     12,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "llama1b|agent2": {
+   "leaf_count": [
+    0,
+    20
+   ],
+   "ALL": [
+    32,
+    120
+   ],
+   "closer": [
+    11,
+    25
+   ],
+   "clade": [
+    10,
+    25
+   ],
+   "same_topology": [
+    11,
     25
    ],
    "p2v": [
@@ -182,6 +234,32 @@
     25
    ]
   },
+  "llama3b|agent2": {
+   "leaf_count": [
+    20,
+    20
+   ],
+   "ALL": [
+    73,
+    120
+   ],
+   "closer": [
+    15,
+    25
+   ],
+   "clade": [
+    9,
+    25
+   ],
+   "same_topology": [
+    21,
+    25
+   ],
+   "p2v": [
+    8,
+    25
+   ]
+  },
   "llama3b|probe": {
    "leaf_count": [
     3,
@@ -249,6 +327,32 @@
    ],
    "clade": [
     10,
+    25
+   ],
+   "same_topology": [
+    0,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "mimir|agent2": {
+   "leaf_count": [
+    2,
+    20
+   ],
+   "ALL": [
+    27,
+    120
+   ],
+   "closer": [
+    14,
+    25
+   ],
+   "clade": [
+    11,
     25
    ],
    "same_topology": [
@@ -331,6 +435,32 @@
    ],
    "same_topology": [
     9,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "qwen3b|agent2": {
+   "leaf_count": [
+    12,
+    20
+   ],
+   "ALL": [
+    47,
+    120
+   ],
+   "closer": [
+    13,
+    25
+   ],
+   "clade": [
+    14,
+    25
+   ],
+   "same_topology": [
+    8,
     25
    ],
    "p2v": [
