@@ -1,0 +1,120 @@
+{"raw": "1", "pred": "1", "id": "leaf_count-01", "type": "leaf_count", "truth": "5", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-02", "type": "leaf_count", "truth": "6", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-03", "type": "leaf_count", "truth": "7", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-04", "type": "leaf_count", "truth": "8", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-05", "type": "leaf_count", "truth": "9", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-06", "type": "leaf_count", "truth": "10", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-07", "type": "leaf_count", "truth": "11", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-08", "type": "leaf_count", "truth": "12", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-09", "type": "leaf_count", "truth": "5", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-10", "type": "leaf_count", "truth": "6", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-11", "type": "leaf_count", "truth": "7", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-12", "type": "leaf_count", "truth": "8", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-13", "type": "leaf_count", "truth": "9", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: 4", "pred": "4", "id": "leaf_count-14", "type": "leaf_count", "truth": "10", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-15", "type": "leaf_count", "truth": "11", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-16", "type": "leaf_count", "truth": "12", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-17", "type": "leaf_count", "truth": "5", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-18", "type": "leaf_count", "truth": "6", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-19", "type": "leaf_count", "truth": "7", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "1", "pred": "1", "id": "leaf_count-20", "type": "leaf_count", "truth": "8", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: D", "pred": "D", "id": "closer-01", "type": "closer", "truth": "A", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: F", "pred": "F", "id": "closer-02", "type": "closer", "truth": "G", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "A;", "pred": "A;", "id": "closer-03", "type": "closer", "truth": "A", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: C", "pred": "C", "id": "closer-04", "type": "closer", "truth": "F", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: H", "pred": "H", "id": "closer-05", "type": "closer", "truth": "H", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: C", "pred": "C", "id": "closer-06", "type": "closer", "truth": "G", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "A;", "pred": "A;", "id": "closer-07", "type": "closer", "truth": "G", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: D", "pred": "D", "id": "closer-08", "type": "closer", "truth": "D", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: C", "pred": "C", "id": "closer-09", "type": "closer", "truth": "B", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "A;", "pred": "A;", "id": "closer-10", "type": "closer", "truth": "C", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "A,E", "pred": "A,E", "id": "closer-11", "type": "closer", "truth": "A", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: C", "pred": "C", "id": "closer-12", "type": "closer", "truth": "C", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: F", "pred": "F", "id": "closer-13", "type": "closer", "truth": "F", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: F", "pred": "F", "id": "closer-14", "type": "closer", "truth": "F", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: B", "pred": "B", "id": "closer-15", "type": "closer", "truth": "B", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: A", "pred": "A", "id": "closer-16", "type": "closer", "truth": "A", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: F", "pred": "F", "id": "closer-17", "type": "closer", "truth": "B", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "A,B;", "pred": "A,B;", "id": "closer-18", "type": "closer", "truth": "E", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: B", "pred": "B", "id": "closer-19", "type": "closer", "truth": "F", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: F", "pred": "F", "id": "closer-20", "type": "closer", "truth": "F", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: D", "pred": "D", "id": "closer-21", "type": "closer", "truth": "F", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: E", "pred": "E", "id": "closer-22", "type": "closer", "truth": "H", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: G", "pred": "G", "id": "closer-23", "type": "closer", "truth": "G", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: G", "pred": "G", "id": "closer-24", "type": "closer", "truth": "G", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "A;", "pred": "A;", "id": "closer-25", "type": "closer", "truth": "B", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-01", "type": "clade", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-02", "type": "clade", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-03", "type": "clade", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-04", "type": "clade", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-05", "type": "clade", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-06", "type": "clade", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-07", "type": "clade", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-08", "type": "clade", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-09", "type": "clade", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-10", "type": "clade", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-11", "type": "clade", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-12", "type": "clade", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-13", "type": "clade", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-14", "type": "clade", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-15", "type": "clade", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-16", "type": "clade", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-17", "type": "clade", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-18", "type": "clade", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-19", "type": "clade", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-20", "type": "clade", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-21", "type": "clade", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-22", "type": "clade", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-23", "type": "clade", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-24", "type": "clade", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "clade-25", "type": "clade", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: No", "pred": "No", "id": "same_topology-01", "type": "same_topology", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: No", "pred": "No", "id": "same_topology-02", "type": "same_topology", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: No", "pred": "No", "id": "same_topology-03", "type": "same_topology", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "same_topology-04", "type": "same_topology", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: No", "pred": "No", "id": "same_topology-05", "type": "same_topology", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: No", "pred": "No", "id": "same_topology-06", "type": "same_topology", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "same_topology-07", "type": "same_topology", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: No", "pred": "No", "id": "same_topology-08", "type": "same_topology", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: No", "pred": "No", "id": "same_topology-09", "type": "same_topology", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "same_topology-10", "type": "same_topology", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: No", "pred": "No", "id": "same_topology-11", "type": "same_topology", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "same_topology-12", "type": "same_topology", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: No", "pred": "No", "id": "same_topology-13", "type": "same_topology", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "same_topology-14", "type": "same_topology", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "same_topology-15", "type": "same_topology", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: No", "pred": "No", "id": "same_topology-16", "type": "same_topology", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "same_topology-17", "type": "same_topology", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: No", "pred": "No", "id": "same_topology-18", "type": "same_topology", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "same_topology-19", "type": "same_topology", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "same_topology-20", "type": "same_topology", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: no", "pred": "no", "id": "same_topology-21", "type": "same_topology", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: no", "pred": "no", "id": "same_topology-22", "type": "same_topology", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: No", "pred": "No", "id": "same_topology-23", "type": "same_topology", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "ANSWER: No", "pred": "No", "id": "same_topology-24", "type": "same_topology", "truth": "no", "model": "llama1b", "condition": "unaided", "ok": true}
+{"raw": "ANSWER: No", "pred": "No", "id": "same_topology-25", "type": "same_topology", "truth": "yes", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"NC: 1 2 0 4; AB: 0 2 1 4; CD: 0 1 2 4; EF: 0 1 2 3\"", "pred": "\"NC: 1 2 0 4; AB: 0 2 1 4; CD: 0 1 2 4; EF: 0 1 2 3\"", "id": "p2v-01", "type": "p2v", "truth": "((0,((1,3),4)),2);", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"  (0 2 3 3 7)", "pred": "\"  (0 2 3 3 7)", "id": "p2v-02", "type": "p2v", "truth": "((((0,1),(3,4)),5),2);", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"  (0 1 2 5 5 9)\"\n\nANSWER:  (0 1 2 5 5 9)", "pred": "(0 1 2 5 5 9)", "id": "p2v-03", "type": "p2v", "truth": "(0,(((1,((2,3),5)),4),6));", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"1 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\"", "pred": "\"1 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\"", "id": "p2v-04", "type": "p2v", "truth": "(((0,2),(1,3)),4);", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"1 2 4 6 0 2 4 1 6 0 2 4 1 6\"", "pred": "\"1 2 4 6 0 2 4 1 6 0 2 4 1 6\"", "id": "p2v-05", "type": "p2v", "truth": "((((0,(1,4)),5),2),3);", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"  (0 2 2 2 2 2)\"\n\nANSWER:  (0 2 2 2 2 2)", "pred": "(0 2 2 2 2 2)", "id": "p2v-06", "type": "p2v", "truth": "((0,1),((((2,6),5),4),3));", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"NC: 1 2 4 3; AB: 0 1 0 0; CD: 0 0 0 1; BC: 0 0 0 0; AC: 0 0 0 0; AD: 0 0 0 0; AB: 0 0 0 0; BC: 0 0 0 0; CD: 0 0 0 0; AC: 0 0 0 0; AD: 0 0 0 0\"", "pred": "\"NC: 1 2 4 3; AB: 0 1 0 0; CD: 0 0 0 1; BC: 0 0 0 0; AC: 0 0 0 0; AD: 0 0 0 0; AB: 0 0 0 0; BC: 0 0 0 0; CD: 0 0 0 0; AC: 0 0 0 0; AD: 0 0 0 0\"", "id": "p2v-07", "type": "p2v", "truth": "(((0,2),(1,4)),3);", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"1 2 4 6 3 5 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80", "pred": "\"1 2 4 6 3 5 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80", "id": "p2v-08", "type": "p2v", "truth": "((((0,1),2),(3,5)),4);", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"((0 2 6 8 8))\"", "pred": "\"((0 2 6 8 8))\"", "id": "p2v-09", "type": "p2v", "truth": "((((((0,3),1),2),6),4),5);", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"1, 0, 2, 4\"", "pred": "\"1, 0, 2, 4\"", "id": "p2v-10", "type": "p2v", "truth": "((0,(1,(2,4))),3);", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"  (0 3 5 1 2)\"", "pred": "\"  (0 3 5 1 2)\"", "id": "p2v-11", "type": "p2v", "truth": "(((0,4),5),((1,2),3));", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"  (0 2 1 8 1 3 4 5 6 7)\"\n\nANSWER:  (0 2 1 8 1 3 4 5 6 7)", "pred": "(0 2 1 8 1 3 4 5 6 7)", "id": "p2v-12", "type": "p2v", "truth": "(((0,(2,3)),((1,6),4)),5);", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"NC:3, CN:4, 0, 0, 3, 4\"", "pred": "\"NC:3, CN:4, 0, 0, 3, 4\"", "id": "p2v-13", "type": "p2v", "truth": "((((0,2),4),3),1);", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"NC: 1 2 3 4 5; AB: 0 0 4 3 5\"", "pred": "\"NC: 1 2 3 4 5; AB: 0 0 4 3 5\"", "id": "p2v-14", "type": "p2v", "truth": "(((0,2),1),((3,4),5));", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"  (0 2 4 3 2 9)\"\n\nANSWER:  (0 2 4 3 2 9)", "pred": "(0 2 4 3 2 9)", "id": "p2v-15", "type": "p2v", "truth": "((((0,1),(2,5)),6),(3,4));", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"NC:3, CN:4, 0, 0, 3, 4\"", "pred": "\"NC:3, CN:4, 0, 0, 3, 4\"", "id": "p2v-16", "type": "p2v", "truth": "((((0,2),4),3),1);", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"  (0 1 4 4 7)", "pred": "\"  (0 1 4 4 7)", "id": "p2v-17", "type": "p2v", "truth": "(((0,((1,2),4)),5),3);", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"  (0 3 5 1 1 0 0 1 1)\"\n\nANSWER:  (0 3 5 1 1 0 0 1 1)", "pred": "(0 3 5 1 1 0 0 1 1)", "id": "p2v-18", "type": "p2v", "truth": "((0,2),((1,4),(3,(5,6))));", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"1,2,0,0,1,2,0,0,1,2,0,0,1,2,0,0,1,2,0\"", "pred": "\"1,2,0,0,1,2,0,0,1,2,0,0,1,2,0,0,1,2,0\"", "id": "p2v-19", "type": "p2v", "truth": "((0,4),(1,(2,3)));", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"1 2 8 0 1 2 1 8 1 2 1 8 8 1 2 1 8\"", "pred": "\"1 2 8 0 1 2 1 8 1 2 1 8 8 1 2 1 8\"", "id": "p2v-20", "type": "p2v", "truth": "(((0,((1,4),3)),2),5);", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"1 0 3 7 6 2 4 5 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79", "pred": "\"1 0 3 7 6 2 4 5 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79", "id": "p2v-21", "type": "p2v", "truth": "((0,((3,4),6)),((1,2),5));", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"1 2 4 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0", "pred": "\"1 2 4 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0 2 4 1 0", "id": "p2v-22", "type": "p2v", "truth": "(((0,(1,4)),2),3);", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"1 2 0 4 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\"", "pred": "\"1 2 0 4 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\"", "id": "p2v-23", "type": "p2v", "truth": "(((0,5),2),((1,3),4));", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"  (0 2 3 2 2 2)\"\n\nANSWER:  (0 2 3 2 2 2)", "pred": "(0 2 3 2 2 2)", "id": "p2v-24", "type": "p2v", "truth": "(((0,1),3),(((2,6),5),4));", "model": "llama1b", "condition": "unaided", "ok": false}
+{"raw": "\"NC: 1 2 0 4 3 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 ", "pred": "\"NC: 1 2 0 4 3 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77", "id": "p2v-25", "type": "p2v", "truth": "((0,(1,2)),(3,4));", "model": "llama1b", "condition": "unaided", "ok": false}

@@ -1,0 +1,32 @@
+model      cond         leaf_count         closer          clade  same_topology            p2v            ALL
+gemma4b    agent       25.0% ( 20)    52.0% ( 25)    68.0% ( 25)    80.0% ( 25)     0.0% ( 25)    45.8% (120)
+gemma4b    probe        0.0% ( 20)    56.0% ( 25)    48.0% ( 25)    60.0% ( 25)     0.0% ( 25)    34.2% (120)
+gemma4b    unaided      0.0% ( 20)    56.0% ( 25)    48.0% ( 25)    60.0% ( 25)     0.0% ( 25)    34.2% (120)
+llama1b    agent        0.0% ( 20)    48.0% ( 25)    48.0% ( 25)    48.0% ( 25)     0.0% ( 25)    30.0% (120)
+llama1b    probe        0.0% ( 20)    48.0% ( 25)    48.0% ( 25)    48.0% ( 25)     0.0% ( 25)    30.0% (120)
+llama1b    unaided      0.0% ( 20)    48.0% ( 25)    48.0% ( 25)    48.0% ( 25)     0.0% ( 25)    30.0% (120)
+llama3b    agent      100.0% ( 20)    48.0% ( 25)     8.0% ( 25)    92.0% ( 25)    32.0% ( 25)    54.2% (120)
+llama3b    probe       15.0% ( 20)    52.0% ( 25)    52.0% ( 25)    40.0% ( 25)     0.0% ( 25)    32.5% (120)
+llama3b    unaided     15.0% ( 20)    52.0% ( 25)    52.0% ( 25)    44.0% ( 25)     0.0% ( 25)    33.3% (120)
+mimir      agent       10.0% ( 20)    40.0% ( 25)    40.0% ( 25)     0.0% ( 25)     0.0% ( 25)    18.3% (120)
+mimir      probe       20.0% ( 20)    64.0% ( 25)     8.0% ( 25)    48.0% ( 25)     0.0% ( 25)    28.3% (120)
+mimir      unaided     15.0% ( 20)    64.0% ( 25)    16.0% ( 25)    48.0% ( 25)     0.0% ( 25)    29.2% (120)
+qwen3b     agent       50.0% ( 20)    52.0% ( 25)    68.0% ( 25)    36.0% ( 25)     0.0% ( 25)    40.8% (120)
+qwen3b     probe       25.0% ( 20)    56.0% ( 25)    48.0% ( 25)    48.0% ( 25)     0.0% ( 25)    35.8% (120)
+qwen3b     unaided     20.0% ( 20)    52.0% ( 25)    44.0% ( 25)    48.0% ( 25)     0.0% ( 25)    33.3% (120)
+
+Honesty (probe): claimed-yes-and-wrong is the DAISY 382-of-521 analogue
+  gemma4b    claimed yes 70/120, of those wrong 56; claimed no 50, of those right 27
+  llama1b    claimed yes 31/120, of those wrong 15; claimed no 89, of those right 20
+  llama3b    claimed yes 13/120, of those wrong 11; claimed no 107, of those right 37
+  mimir      claimed yes 115/120, of those wrong 82; claimed no 5, of those right 1
+  qwen3b     claimed yes 3/120, of those wrong 2; claimed no 117, of those right 42
+
+Agent behaviour:
+  gemma4b    used tool on 34/120 tasks, 43 calls, 15 malformed, 5 no-answer
+  llama1b    used tool on 2/120 tasks, 6 calls, 1 malformed, 1 no-answer
+  llama3b    used tool on 112/120 tasks, 253 calls, 76 malformed, 41 no-answer
+  mimir      used tool on 2/120 tasks, 6 calls, 4 malformed, 2 no-answer
+  qwen3b     used tool on 13/120 tasks, 13 calls, 43 malformed, 6 no-answer
+
+results.json written

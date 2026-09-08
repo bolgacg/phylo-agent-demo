@@ -1,0 +1,468 @@
+{
+ "table": {
+  "gemma4b|agent": {
+   "leaf_count": [
+    5,
+    20
+   ],
+   "ALL": [
+    55,
+    120
+   ],
+   "closer": [
+    13,
+    25
+   ],
+   "clade": [
+    17,
+    25
+   ],
+   "same_topology": [
+    20,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "gemma4b|probe": {
+   "leaf_count": [
+    0,
+    20
+   ],
+   "ALL": [
+    41,
+    120
+   ],
+   "closer": [
+    14,
+    25
+   ],
+   "clade": [
+    12,
+    25
+   ],
+   "same_topology": [
+    15,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "gemma4b|unaided": {
+   "leaf_count": [
+    0,
+    20
+   ],
+   "ALL": [
+    41,
+    120
+   ],
+   "closer": [
+    14,
+    25
+   ],
+   "clade": [
+    12,
+    25
+   ],
+   "same_topology": [
+    15,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "llama1b|agent": {
+   "leaf_count": [
+    0,
+    20
+   ],
+   "ALL": [
+    36,
+    120
+   ],
+   "closer": [
+    12,
+    25
+   ],
+   "clade": [
+    12,
+    25
+   ],
+   "same_topology": [
+    12,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "llama1b|probe": {
+   "leaf_count": [
+    0,
+    20
+   ],
+   "ALL": [
+    36,
+    120
+   ],
+   "closer": [
+    12,
+    25
+   ],
+   "clade": [
+    12,
+    25
+   ],
+   "same_topology": [
+    12,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "llama1b|unaided": {
+   "leaf_count": [
+    0,
+    20
+   ],
+   "ALL": [
+    36,
+    120
+   ],
+   "closer": [
+    12,
+    25
+   ],
+   "clade": [
+    12,
+    25
+   ],
+   "same_topology": [
+    12,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "llama3b|agent": {
+   "leaf_count": [
+    20,
+    20
+   ],
+   "ALL": [
+    65,
+    120
+   ],
+   "closer": [
+    12,
+    25
+   ],
+   "clade": [
+    2,
+    25
+   ],
+   "same_topology": [
+    23,
+    25
+   ],
+   "p2v": [
+    8,
+    25
+   ]
+  },
+  "llama3b|probe": {
+   "leaf_count": [
+    3,
+    20
+   ],
+   "ALL": [
+    39,
+    120
+   ],
+   "closer": [
+    13,
+    25
+   ],
+   "clade": [
+    13,
+    25
+   ],
+   "same_topology": [
+    10,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "llama3b|unaided": {
+   "leaf_count": [
+    3,
+    20
+   ],
+   "ALL": [
+    40,
+    120
+   ],
+   "closer": [
+    13,
+    25
+   ],
+   "clade": [
+    13,
+    25
+   ],
+   "same_topology": [
+    11,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "mimir|agent": {
+   "leaf_count": [
+    2,
+    20
+   ],
+   "ALL": [
+    22,
+    120
+   ],
+   "closer": [
+    10,
+    25
+   ],
+   "clade": [
+    10,
+    25
+   ],
+   "same_topology": [
+    0,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "mimir|probe": {
+   "leaf_count": [
+    4,
+    20
+   ],
+   "ALL": [
+    34,
+    120
+   ],
+   "closer": [
+    16,
+    25
+   ],
+   "clade": [
+    2,
+    25
+   ],
+   "same_topology": [
+    12,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "mimir|unaided": {
+   "leaf_count": [
+    3,
+    20
+   ],
+   "ALL": [
+    35,
+    120
+   ],
+   "closer": [
+    16,
+    25
+   ],
+   "clade": [
+    4,
+    25
+   ],
+   "same_topology": [
+    12,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "qwen3b|agent": {
+   "leaf_count": [
+    10,
+    20
+   ],
+   "ALL": [
+    49,
+    120
+   ],
+   "closer": [
+    13,
+    25
+   ],
+   "clade": [
+    17,
+    25
+   ],
+   "same_topology": [
+    9,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "qwen3b|probe": {
+   "leaf_count": [
+    5,
+    20
+   ],
+   "ALL": [
+    43,
+    120
+   ],
+   "closer": [
+    14,
+    25
+   ],
+   "clade": [
+    12,
+    25
+   ],
+   "same_topology": [
+    12,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  },
+  "qwen3b|unaided": {
+   "leaf_count": [
+    4,
+    20
+   ],
+   "ALL": [
+    40,
+    120
+   ],
+   "closer": [
+    13,
+    25
+   ],
+   "clade": [
+    11,
+    25
+   ],
+   "same_topology": [
+    12,
+    25
+   ],
+   "p2v": [
+    0,
+    25
+   ]
+  }
+ },
+ "honesty": {
+  "gemma4b": {
+   "n": 120,
+   "claimed_yes": 70,
+   "claimed_yes_wrong": 56,
+   "claimed_no": 50,
+   "claimed_no_right": 27
+  },
+  "llama1b": {
+   "n": 120,
+   "claimed_yes": 31,
+   "claimed_yes_wrong": 15,
+   "claimed_no": 89,
+   "claimed_no_right": 20
+  },
+  "llama3b": {
+   "n": 120,
+   "claimed_yes": 13,
+   "claimed_yes_wrong": 11,
+   "claimed_no": 107,
+   "claimed_no_right": 37
+  },
+  "mimir": {
+   "n": 120,
+   "claimed_yes": 115,
+   "claimed_yes_wrong": 82,
+   "claimed_no": 5,
+   "claimed_no_right": 1
+  },
+  "qwen3b": {
+   "n": 120,
+   "claimed_yes": 3,
+   "claimed_yes_wrong": 2,
+   "claimed_no": 117,
+   "claimed_no_right": 42
+  }
+ },
+ "agent": {
+  "gemma4b": {
+   "rows": 120,
+   "used_tool": 34,
+   "tool_calls": 43,
+   "malformed": 15,
+   "no_answer": 5
+  },
+  "llama1b": {
+   "rows": 120,
+   "used_tool": 2,
+   "tool_calls": 6,
+   "malformed": 1,
+   "no_answer": 1
+  },
+  "llama3b": {
+   "rows": 120,
+   "used_tool": 112,
+   "tool_calls": 253,
+   "malformed": 76,
+   "no_answer": 41
+  },
+  "mimir": {
+   "rows": 120,
+   "used_tool": 2,
+   "tool_calls": 6,
+   "malformed": 4,
+   "no_answer": 2
+  },
+  "qwen3b": {
+   "rows": 120,
+   "used_tool": 13,
+   "tool_calls": 13,
+   "malformed": 43,
+   "no_answer": 6
+  }
+ }
+}

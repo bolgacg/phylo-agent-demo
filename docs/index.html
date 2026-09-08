@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can a small language model be trusted with a phylogenetic tree?</title>
+<meta name="description" content="An interactive public study: five small open language models read, judge and manipulate phylogenetic trees, first unaided, then asked whether they can, then given the phylo2vec library as a tool. Every number computed from logged runs. Bolgaç Gülen, September 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf9f7; --ink:#1a1d21; --soft:#5b6470; --faint:#8b95a1;
+  --rule:#e2e0dc; --rule2:#c9c5be; --panel:#f3f1ed; --card:#ffffff;
+  --pos:#2f7d54; --neg:#b03a3a; --accent:#2c4a6b; --amber:#c8860d; --blue:#2a78d6;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6}
+a{color:var(--accent);text-decoration:none;font-weight:500}
+a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.mono{font-family:var(--mono)}
+header{padding:54px 0 30px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin-bottom:14px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4.6vw,44px);line-height:1.12;max-width:21em}
+.lede{max-width:46em;margin-top:16px;color:var(--ink)}
+.qgrid{margin:22px 0 4px;display:grid;gap:10px;max-width:46em}
+.qrow{display:flex;gap:10px;align-items:baseline}
+.qrow b{white-space:nowrap}
+.qrow .qa{color:var(--soft)}
+.byline{margin-top:18px;font-size:13.5px;color:var(--soft)}
+.byline button{margin-left:10px}
+button.chip,button.tour-open{font:500 13px var(--sans);border:1px solid var(--rule2);background:var(--card);
+  color:var(--ink);border-radius:16px;padding:5px 13px;cursor:pointer}
+button.chip:hover,button.tour-open:hover{border-color:var(--accent);color:var(--accent)}
+button.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+h2{font-family:var(--serif);font-weight:600;font-size:26px;margin:0 0 6px}
+section{padding:40px 0;border-bottom:1px solid var(--rule)}
+.sec-label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.whycare{max-width:46em;color:var(--ink);margin-bottom:18px}
+.primer ol{max-width:46em;padding-left:20px;display:grid;gap:8px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+@media(max-width:840px){.two{grid-template-columns:1fr}}
+.figure{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:16px 18px;margin:14px 0}
+.figure .cap{font-size:13.5px;color:var(--soft);margin-top:10px;border-top:1px solid var(--rule);padding-top:10px}
+.cap b{color:var(--ink)}
+.glossary{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:14px 18px;margin-top:18px}
+.glossary dt{font-weight:600;margin-top:8px}
+.glossary dd{color:var(--soft);margin-left:0}
+.verdict{background:var(--panel);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:13px 17px;margin:16px 0;max-width:52em}
+.verdict b{display:block;margin-bottom:4px}
+.handover{font-style:italic;color:var(--soft);max-width:46em;margin-top:14px}
+.hint{font-size:13px;color:var(--faint);margin-top:6px}
+.browser{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:16px 18px;margin:14px 0;overflow-x:auto}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+.qbox{font-family:var(--mono);font-size:13px;background:var(--panel);border:1px solid var(--rule);
+  border-radius:6px;padding:11px 13px;white-space:pre-wrap;word-break:break-word}
+.truth{font-size:13.5px;margin:8px 0;color:var(--soft)}
+.truth .mono{color:var(--ink)}
+table.answers{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+table.answers th{text-align:left;font-weight:600;border-bottom:1px solid var(--rule2);padding:5px 10px 5px 0}
+table.answers td{border-bottom:1px solid var(--rule);padding:5px 10px 5px 0;vertical-align:top}
+table.answers td.num,table.answers th.num{text-align:right;font-family:var(--mono);white-space:nowrap}
+table.answers td.mono{word-break:break-all}
+.two>div{min-width:0;overflow-x:auto}
+.ok{color:var(--pos);font-weight:600}
+.bad{color:var(--neg);font-weight:600}
+.navbtns{display:flex;gap:8px;align-items:center;margin-top:10px}
+.navbtns .pos{color:var(--soft);font-size:13px}
+svg text{font-family:var(--mono);font-size:12px;fill:var(--ink)}
+svg text.dim{fill:var(--soft)}
+svg text.axis{fill:var(--faint);font-size:11px}
+.behav{font-size:14px;border-collapse:collapse;width:100%}
+.behav th{text-align:left;border-bottom:1px solid var(--rule2);padding:4px 10px 4px 0;font-weight:600}
+.behav td{border-bottom:1px solid var(--rule);padding:4px 10px 4px 0}
+.behav td.num,.behav th.num{text-align:right;font-family:var(--mono)}
+.transcript{font-family:var(--mono);font-size:12.5px;display:grid;gap:6px;margin-top:10px}
+.turn{border:1px solid var(--rule);border-radius:6px;padding:8px 11px;white-space:pre-wrap;word-break:break-word}
+.turn.model{background:var(--card)}
+.turn.tool{background:var(--panel);border-left:3px solid var(--amber)}
+.turn .who{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:3px}
+.fails{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:16px 18px}
+.fails li{margin:7px 0;max-width:60em}
+.coda p{max-width:46em;margin-bottom:10px}
+.coda .mono{font-size:13px}
+.sources li{margin:6px 0;max-width:60em}
+footer{padding:26px 0 60px;font-size:13px;color:var(--faint)}
+#tour{display:none;position:absolute;inset:0;z-index:50}
+#tour.on{display:block}
+#tour-dim{position:absolute;inset:0;background:rgba(20,23,28,.55);mix-blend-mode:multiply;pointer-events:none}
+#tour-hl{position:absolute;border:2px solid var(--amber);border-radius:10px;
+  box-shadow:0 0 0 9999px rgba(20,23,28,.55);pointer-events:none}
+#tour-card{position:absolute;width:min(400px,calc(100vw - 32px));background:var(--card);
+  border:1px solid var(--rule2);border-radius:10px;padding:15px 17px;font-size:14px;box-shadow:0 8px 30px rgba(0,0,0,.18)}
+#tour-card .tk{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+.tour-nav{display:flex;gap:8px;align-items:center;margin-top:12px}
+.dots{flex:1;display:flex;gap:5px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--rule2)}
+.dots i.on{background:var(--accent)}
+.tour-btn{font:500 13px var(--sans);border:1px solid var(--rule2);background:var(--card);border-radius:6px;padding:5px 12px;cursor:pointer}
+.tour-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.treefig{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.chart-scroll{overflow-x:auto}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">An interactive public study · language model agents and phylogenetic software</div>
+    <h1>Can a small language model be trusted with a phylogenetic tree?</h1>
+    <p class="lede">Five small open language models were given 120 questions about phylogenetic
+    trees, the family-tree diagrams of evolutionary biology, under three conditions: reading the
+    tree unaided, first saying whether they can, and finally operating a real tree library as a
+    tool. This page shows what each condition found, with every answer logged and every number
+    computed from the runs.</p>
+    <div class="qgrid" id="headline">
+      <div class="qrow"><b>Can they read a tree unaided?</b><span class="qa" id="hl1">computing…</span></div>
+      <div class="qrow"><b>Do they know when they cannot?</b><span class="qa" id="hl2">computing…</span></div>
+      <div class="qrow"><b>Does handing them the library fix it?</b><span class="qa" id="hl3">computing…</span></div>
+    </div>
+    <p class="byline">Bolgaç Gülen · September 2026 · companion to
+      <a href="https://bolgacg.github.io/daisy-tools/">the DAISY lookup study</a> ·
+      <a href="https://github.com/bolgacg/phylo-agent-demo">code and logged runs</a>
+      <button class="tour-open" id="tourbtn">Guided tour</button></p>
+  </div>
+</header>
+
+<section class="primer" id="primer">
+  <div class="wrap">
+    <div class="sec-label">Section 1 · What you need to know</div>
+    <h2>Five things, then the study makes sense</h2>
+    <ol>
+      <li>A <b>phylogenetic tree</b> shows how a set of species or samples are related: branches
+      join the closest relatives first, the way a family tree joins siblings before cousins.</li>
+      <li>Trees are written as text in <b>Newick format</b>: nested parentheses. <span class="mono">((A,B),C);</span>
+      means A and B are each other's closest relatives, and C sits outside that pair.</li>
+      <li><b>phylo2vec</b> is a published encoding that turns any such tree into a short list of
+      integers and back (Penn, Scheidwasser, Khurana, Duchêne, Donnelly and Bhatt,
+      <i>Systematic Biology</i>, 2025). Its open-source library also measures trees: distances,
+      comparisons, conversions. It is the tool handed to the models in the last act.</li>
+      <li>The <b>models</b> are five small open language models, one to four billion parameters,
+      each running on a single desktop graphics card: the same five as
+      <a href="https://bolgacg.github.io/daisy-tools/">the DAISY study</a>, where the question was
+      Danish facts instead of trees.</li>
+      <li>The <b>question</b> is not whether small models are phylogenetics experts. It is the
+      floor below that: can they read the notation, do they know their own limits, and can they
+      operate the library that does the real work. Those are the abilities an agent inside a
+      bioinformatics pipeline actually needs.</li>
+    </ol>
+    <div class="figure" style="margin-top:18px">
+      <div class="treefig">
+        <svg id="domainfig" width="300" height="150" viewBox="0 0 300 150" role="img" aria-label="A small phylogenetic tree"></svg>
+        <div style="flex:1;min-width:240px">
+          <p style="font-size:14px">The same tree three ways: the drawing, its Newick string
+          <span class="mono" id="domain-nw"></span>, and its phylo2vec vector
+          <span class="mono" id="domain-vec"></span>. Everything on this page moves between these
+          three forms.</p>
+        </div>
+      </div>
+      <div class="cap"><b>What you see:</b> one five-leaf tree drawn, written, and encoded.
+      <b>How to read it:</b> taxa that join lower down are closer relatives.
+      <b>Take-away:</b> the text forms carry exactly the drawing, no more, and models only ever see the text.</div>
+    </div>
+    <dl class="glossary">
+      <dt>Taxon (plural taxa)</dt><dd>one tip of the tree: a species, strain or sample. Written here as letters A, B, C.</dd>
+      <dt>Topology</dt><dd>the branching structure alone, ignoring how the drawing is rotated. <span class="mono">((A,B),C)</span> and <span class="mono">(C,(B,A))</span> are the same topology.</dd>
+      <dt>Clade</dt><dd>a branch and everything on it: the smallest group containing two taxa is the group at their meeting point.</dd>
+      <dt>phylo2vec vector</dt><dd>the integer list encoding of a tree, one integer per added leaf. Compact, and two trees are identical exactly when their canonical vectors are.</dd>
+      <dt>Exact match</dt><dd>the scoring rule: an answer counts only if it is right, letter for letter for words and numbers, same topology for trees. Partial credit does not exist on this page.</dd>
+      <dt>Unaided / probe / agent</dt><dd>the conditions: answer alone; first declare yes or no whether you can answer without tools, then answer alone; answer with the phylo2vec toolset, calling tools as often as needed. The agent condition runs twice, differing only in how tool errors are worded.</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="act1">
+  <div class="wrap">
+    <div class="sec-label">Act 1 · Reading, unaided</div>
+    <h2>First, just read the tree</h2>
+    <p class="whycare">This act matters because everything an agent might do downstream stands on
+    it: a model that miscounts the taxa in a ten-leaf tree has no business summarising a
+    thousand-leaf one. The 120 tasks span five kinds, from counting taxa to expanding a phylo2vec
+    vector, and each has one computed correct answer.</p>
+
+    <div class="browser" id="browser">
+      <div class="chips" id="typechips"></div>
+      <div class="qbox" id="qtext"></div>
+      <div class="truth">Computed correct answer: <span class="mono" id="qtruth"></span></div>
+      <table class="answers"><thead><tr><th>model</th><th>unaided answer</th><th class="num">verdict</th></tr></thead>
+        <tbody id="qanswers"></tbody></table>
+      <div class="navbtns">
+        <button class="chip" id="prevq">Previous</button>
+        <button class="chip" id="nextq">Next task</button>
+        <span class="pos" id="qpos"></span>
+      </div>
+      <div class="hint">Click a task type above, then step through tasks; the table shows each model's actual logged answer.</div>
+    </div>
+
+    <div class="figure">
+      <div class="chart-scroll"><div id="chart1"></div></div>
+      <div class="cap"><b>What you see:</b> unaided accuracy for each model on each of the five
+      task kinds; one bar is one model's share of exactly right answers on that kind, on a 0 to 100
+      percent scale. <b>How to read it:</b> longer is better; the count behind every bar is in its
+      label. <b>Take-away:</b> <span id="cap1-take">computing…</span></div>
+    </div>
+
+    <div class="verdict" id="verdict1"><b>computing…</b><span></span></div>
+    <p class="handover">If reading is this unreliable, the next question is whether the models at
+    least know it about themselves. Act 2 asks them before they answer.</p>
+  </div>
+</section>
+
+<section id="act2">
+  <div class="wrap">
+    <div class="sec-label">Act 2 · The honesty probe</div>
+    <h2>Ask it first: can you do this without tools?</h2>
+    <p class="whycare">This act matters because an agent decides for itself when to reach for a
+    tool. That decision is only as good as the model's self-assessment. Before each unaided answer,
+    every model was asked one extra question: can you determine this reliably by yourself, yes or
+    no. <a href="https://bolgacg.github.io/daisy-tools/">The DAISY study</a> found Mimir claiming
+    to know 382 of the 521 Danish questions it then got wrong; this act runs the same probe on
+    trees.</p>
+
+    <div class="figure">
+      <div class="chart-scroll"><div id="chart2"></div></div>
+      <div class="cap"><b>What you see:</b> for each model, two dots on one 0 to 100 percent
+      scale: how often it said yes, I can do this without tools, and how often its answers were
+      then actually right. <b>How to read it:</b> the horizontal gap between a model's dots is its
+      overconfidence; dots together mean the model knows itself. <b>Take-away:</b>
+      <span id="cap2-take">computing…</span></div>
+    </div>
+
+    <div class="browser">
+      <table class="answers"><thead><tr><th>model</th><th class="num">said "yes, I can"</th>
+        <th class="num">of those, wrong</th><th class="num">wrong while sure</th></tr></thead>
+        <tbody id="honesty-rows"></tbody></table>
+      <div class="hint">Click a model row to see three of its wrong-while-sure answers below.</div>
+      <div class="transcript" id="sure-examples"></div>
+    </div>
+
+    <div class="verdict" id="verdict2"><b>computing…</b><span></span></div>
+    <p class="handover">A model that misjudges itself cannot be left to decide when to use a tool.
+    Act 3 removes the decision: the library is in its hands from the start.</p>
+  </div>
+</section>
+
+<section id="act3">
+  <div class="wrap">
+    <div class="sec-label">Act 3 · The agent condition</div>
+    <h2>Hand it the library</h2>
+    <p class="whycare">This act matters because it is the deployable shape: the model is given six
+    phylo2vec-backed tools (count leaves, path length, clade membership, topology comparison, both
+    vector conversions) through a plain text protocol, and may call them as often as it likes
+    before answering. What is measured is not tree knowledge but tool competence: copying a Newick
+    string into a call, reading the result back, knowing when to stop.</p>
+
+    <div class="figure">
+      <div class="chart-scroll"><div id="chart3"></div></div>
+      <div class="cap"><b>What you see:</b> each model's overall accuracy across all 120 tasks as
+      two dots: unaided, and with the toolset. <b>How to read it:</b> the line between the dots is
+      what the library added; a long line to the right means the model can use a tool it cannot
+      replace. <b>Take-away:</b> <span id="cap3-take">computing…</span></div>
+    </div>
+
+    <div class="two">
+      <div>
+        <table class="behav"><thead><tr><th>model</th><th class="num">used a tool</th>
+          <th class="num">calls</th><th class="num">malformed</th><th class="num">gave no answer</th></tr></thead>
+          <tbody id="behav-rows"></tbody></table>
+        <div class="hint">Out of 120 tasks each. A malformed call is one the tool layer could not execute.</div>
+      </div>
+      <div>
+        <div class="chips" id="trmodels"></div>
+        <div class="transcript" id="transcript"></div>
+        <div class="navbtns">
+          <button class="chip" id="trprev">Previous</button>
+          <button class="chip" id="trnext">Next transcript</button>
+          <span class="pos" id="trpos"></span>
+        </div>
+        <div class="hint">Real logged agent runs: pick a model, step through its tool-using transcripts.</div>
+      </div>
+    </div>
+
+    <div class="verdict" id="verdict3"><b>computing…</b><span></span></div>
+
+    <div id="remedy">
+      <h2 style="font-size:20px;margin-top:26px">The finding, and its measured remedy</h2>
+      <p class="whycare">The largest single failure in the agent runs was not knowledge: one model
+      kept calling the clade tool with a missing argument, the tool answered with a bare
+      <span class="mono">list index out of range</span>, and the model never recovered. That is a
+      harness defect as much as a model defect, so the fix was built and measured: the same runs
+      again, with error messages that name the missing field and show correct usage.</p>
+      <div class="figure">
+        <table class="behav"><thead><tr><th>model</th><th class="num">with tools, terse errors</th>
+          <th class="num">with tools, helpful errors</th><th class="num">change</th></tr></thead>
+          <tbody id="remedy-rows"></tbody></table>
+        <div class="cap"><b>What you see:</b> overall accuracy on all 120 tasks in the two agent
+        arms; the only difference between the columns is the wording of tool error messages.
+        <b>How to read it:</b> the change column is what better error messages alone bought.
+        <b>Take-away:</b> <span id="capR-take">computing…</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fails">
+  <div class="wrap">
+    <div class="sec-label">What this page gets wrong, stated first</div>
+    <h2>Limits and misses</h2>
+    <div class="fails"><ul>
+      <li><b>The trees are synthetic and small.</b> Five to twelve leaves, topology only, no branch
+      lengths, no real sequence data. This measures the notation floor, not phylogenetic inference;
+      a real analysis has thousands of taxa and the hard part is building the tree, not reading it.</li>
+      <li><b>One run, greedy decoding, 120 tasks.</b> No repeats, no confidence intervals. Differences
+      of a few percentage points between models should not be read as rankings.</li>
+      <li><b>DFM Mimir is out of its domain twice.</b> It is a Danish-language 1B model given English
+      instructions, and it is barely instruction-tuned; its rows are included for continuity with the
+      DAISY study, not as a fair comparison. It is served through the prefix-attention llama.cpp fix
+      from that study.</li>
+      <li><b>The agent protocol is one design.</b> A plain text protocol with pipe-separated
+      arguments was chosen for robustness across five different chat templates; a native tool-calling
+      format could score differently, in either direction.</li>
+      <li><b>"Closer" is topological.</b> Path length in branches, stated in every question; on real
+      trees closeness usually means branch length, which does not exist here.</li>
+      <li><b>The probe changes nothing for the model.</b> Saying no had no cost and brought no tool;
+      a model that always says no loses nothing. The probe measures self-assessment, not strategy.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="coda" id="coda">
+  <div class="wrap">
+    <div class="sec-label">Coda · How this was built</div>
+    <h2>Method, sources, and how to run it</h2>
+    <p><b>Tasks.</b> 120 questions in five kinds, generated by a seeded script. Every correct
+    answer is computed twice: by phylo2vec for conversions and topology comparison, and by an
+    independent Newick parser written for this study for paths, clades and counts; the task set
+    ships only after the two agree on every row. Yes/no kinds are balanced.</p>
+    <p><b>Runs.</b> Each model is served locally by llama.cpp on one GTX 1060 and queried at
+    temperature 0. Unaided and probe conditions are single turns; the agent condition allows up to
+    five tool rounds and runs twice, once with terse tool errors and once with errors that name the
+    missing field and show usage. Every prompt, answer, claim and tool transcript is logged and
+    shipped in the repository.</p>
+    <p><b>Scoring.</b> Exact match. Answers that are trees are compared as topologies, so a
+    correctly rotated Newick counts; everything else is compared as normalised text. Malformed
+    tree answers score zero rather than crashing the scorer.</p>
+    <p class="mono">git clone github.com/bolgacg/phylo-agent-demo · study/run.sh runs everything · study/tasks.jsonl is the task set</p>
+    <h2 style="margin-top:26px;font-size:20px">Sources</h2>
+    <ul class="sources">
+      <li>Penn, Scheidwasser, Khurana, Duchêne, Donnelly, Bhatt:
+        <a href="https://academic.oup.com/sysbio/article/74/2/250/7700305">Phylo2Vec: a vector
+        representation for binary trees</a>, Systematic Biology 74(2), 2025. The encoding and
+        <a href="https://github.com/sbhattlab/phylo2vec">library</a> used throughout.</li>
+      <li><a href="https://bolgacg.github.io/daisy-tools/">One Wikipedia lookup on DAISY</a>: the
+        companion study; same five models, same probe, Danish facts instead of trees.</li>
+      <li><a href="https://github.com/ggml-org/llama.cpp">llama.cpp</a>: the local inference
+        server; Mimir runs through the open prefix-attention pull request described in the DAISY study.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Every number on this page is generated by the build script from the logged
+  runs named above; nothing is typed in. Bolgaç Gülen, September 2026.</div>
+</footer>
+
+<div id="tour"><div id="tour-hl"></div><div id="tour-card"></div></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
