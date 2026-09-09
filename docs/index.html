@@ -88,8 +88,9 @@ svg text.axis{fill:var(--faint);font-size:11px}
 .coda .mono{font-size:13px}
 .sources li{margin:6px 0;max-width:60em}
 footer{padding:26px 0 60px;font-size:13px;color:var(--faint)}
-#tour{display:none;position:absolute;inset:0;z-index:50}
+#tour{display:none;position:absolute;inset:0;z-index:50;pointer-events:none}
 #tour.on{display:block}
+#tour-card{pointer-events:auto}
 #tour-dim{position:absolute;inset:0;background:rgba(20,23,28,.55);mix-blend-mode:multiply;pointer-events:none}
 #tour-hl{position:absolute;border:2px solid var(--amber);border-radius:10px;
   box-shadow:0 0 0 9999px rgba(20,23,28,.55);pointer-events:none}
@@ -145,7 +146,9 @@ footer{padding:26px 0 60px;font-size:13px;color:var(--faint)}
       <li>The <b>models</b> are five small open language models, one to four billion parameters,
       each running on a single desktop graphics card: the same five as
       <a href="https://bolgacg.github.io/daisy-tools/">the DAISY study</a>, where the question was
-      Danish facts instead of trees.</li>
+      Danish facts instead of trees. For scale, these are hundreds of times smaller than frontier
+      chat models; they are the class that runs cheaply and privately inside a pipeline, which is
+      exactly why their floor is worth measuring.</li>
       <li>The <b>question</b> is not whether small models are phylogenetics experts. It is the
       floor below that: can they read the notation, do they know their own limits, and can they
       operate the library that does the real work. Those are the abilities an agent inside a
@@ -303,6 +306,37 @@ footer{padding:26px 0 60px;font-size:13px;color:var(--faint)}
         <b>Take-away:</b> <span id="capR-take">computing…</span></div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-label">Why this floor matters</div>
+    <h2>What these three findings mean for a real pipeline</h2>
+    <p class="whycare">Language model agents are starting to appear inside scientific
+    infrastructure, including platforms for pathogen surveillance and outbreak analysis, where
+    they sit next to alignment tools, tree builders and databases. The models that can run at
+    scale inside such a platform, cheaply and on-premise, are precisely the small class measured
+    here. This section says what the three acts imply for building that kind of system.</p>
+    <p style="max-width:46em;margin-bottom:10px"><b>Act 1 implies the model is never the
+    instrument.</b> A model class that reads a twelve-leaf tree at guessing level must not be the
+    thing that answers questions about a tree; the library computes, the model coordinates. That
+    division of labour has to be enforced by the harness, because, per act 2, the model cannot be
+    trusted to declare its own limits: one model here said yes to almost everything, another said
+    no to almost everything, and both were wrong about themselves. An agent design that asks the
+    model "do you need the tool?" inherits whichever failure its model happens to have.</p>
+    <p style="max-width:46em;margin-bottom:10px"><b>Act 3 implies the interface is a measurable
+    research object.</b> The same model moved from 54 to 61 percent overall, and from 8 to 36
+    percent on one task kind, when nothing changed but the wording of an error message. Tool
+    definitions, argument formats and error text are usually written last and never evaluated;
+    this study treats them the way model prompts are treated, as variables with measurable
+    effects, and finds one of the larger effects on the page.</p>
+    <p style="max-width:46em"><b>The harness transfers.</b> Nothing in the method is specific to
+    trees: the same generate, verify twice, probe, tool-arm, remedy-arm loop applies to any
+    scientific toolchain a language model agent is asked to operate, an aligner or a
+    lineage-assignment tool as readily as phylo2vec. The companion
+    <a href="https://bolgacg.github.io/daisy-tools/">DAISY study</a> is the same loop on factual
+    lookup; this page is the same loop on structured computation.</p>
   </div>
 </section>
 

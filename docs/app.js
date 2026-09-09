@@ -72,15 +72,15 @@ renderTask();
   let html = `<svg width="${panelW*TYPES.length}" height="${panelH+30}" viewBox="0 0 ${panelW*TYPES.length} ${panelH+30}">`;
   TYPES.forEach((t, ti) => {
     const x0 = ti*panelW;
-    html += `<text x="${x0+labW}" y="14" class="dim">${TL[t]}</text>`;
+    html += `<text x="${x0+4}" y="14" class="dim">${TL[t]}</text>`;
     const binary = (t === "closer" || t === "clade" || t === "same_topology");
     MODELS.forEach((m, mi) => {
       const [ok, n] = cell(m, "unaided", t);
       const p = n ? ok/n : 0, y = 26 + mi*(barH+gap);
-      const w = Math.max(1, Math.round(p*100));
+      const w = Math.round(p*100);
       html += `<text x="${x0+labW-6}" y="${y+11}" text-anchor="end" class="dim">${SHORT[m]||ML[m]}</text>`;
       html += `<rect x="${x0+labW}" y="${y}" width="100" height="${barH}" fill="#f3f1ed"/>`;
-      html += `<rect x="${x0+labW}" y="${y}" width="${w}" height="${barH}" fill="#2c4a6b"/>`;
+      if (w > 0) html += `<rect x="${x0+labW}" y="${y}" width="${w}" height="${barH}" fill="#2c4a6b"/>`;
       html += `<text x="${x0+labW+104}" y="${y+11}">${pct(ok,n)}%</text>`;
     });
     if (binary){
@@ -99,7 +99,9 @@ renderTask();
   $("#verdict1").innerHTML = `<b>Unaided, the models are close to guessing.</b>
     The best overall score is ${best[1]} percent (${ML[best[0]]}), and on the two-way kinds every model sits near the 50 percent a coin would earn.
     Counting taxa, the simplest task on the page, tops out at ${counting} percent; expanding a phylo2vec vector is ${p2vBest} percent for all five.
-    Every answer behind these bars is in the task browser above, and the wrong ones are confidently, specifically wrong.`;
+    Every answer behind these bars is in the task browser above, and the wrong ones are confidently, specifically wrong.
+    One calibration before reading on: at one to four billion parameters, holding a nested structure in working memory is genuinely hard,
+    so a near-guessing floor is the expected starting point for this model class, not a scandal; what the next two acts measure is whether that floor can be engineered around.`;
 })();
 
 /* ---------- act 2: honesty dumbbells + table + examples ---------- */
